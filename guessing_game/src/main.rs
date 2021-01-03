@@ -3,7 +3,7 @@ use std::cmp::Ordering;
 use std::io; // import stuff that isn't in the prelude
 
 fn main() {
-  println!("Guess the number!");
+  println!("Guess the number!"); // ! means its a macro not a function
 
   let secret_number = rand::thread_rng().gen_range(1, 101);
   // println!("The secret number is: {}", secret_number);
