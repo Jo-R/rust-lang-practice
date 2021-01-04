@@ -3,11 +3,19 @@ use std::cmp::Ordering;
 use std::io; // import stuff that isn't in the prelude
 
 fn main() {
-  println!("Guess the number!"); // ! means its a macro not a function
+  println!("Guess which tier you're in!"); // ! means its a macro not a function
 
-  let secret_number = rand::thread_rng().gen_range(1, 101);
+  let secret_number = rand::thread_rng().gen_range(1, 5);
   // println!("The secret number is: {}", secret_number);
 
+  let rules = [
+    "",
+    "Hide in a cupboard",
+    "You can only look out the window on a Tuesday",
+    "Zoos will be closed",
+    "No licking politicians",
+    "Put your nana in a zorb",
+  ];
   loop {
     println!("Please input your guess.");
 
@@ -36,7 +44,10 @@ fn main() {
       Ordering::Less => println!("Too small!"),
       Ordering::Greater => println!("Too big!"),
       Ordering::Equal => {
-        println!("You win!");
+        println!(
+          "Correct: the rule for this tier is {}",
+          rules[secret_number as usize]
+        );
         break; // exits the prog as exits the loop
       }
     }
