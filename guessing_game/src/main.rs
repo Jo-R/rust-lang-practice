@@ -5,11 +5,11 @@ use std::io; // import stuff that isn't in the prelude
 fn main() {
   println!("Guess which tier you're in!"); // ! means its a macro not a function
 
-  let secret_number = rand::thread_rng().gen_range(1, 5);
+  let secret_number = rand::thread_rng().gen_range(0, 5);
   // println!("The secret number is: {}", secret_number);
 
   let rules = [
-    "",
+    "Luck you, tier 0, there are no rules",
     "Hide in a cupboard",
     "You can only look out the window on a Tuesday",
     "Zoos will be closed",
